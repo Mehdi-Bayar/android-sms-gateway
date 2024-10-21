@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    package="us.kobay.smsgateway"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature
@@ -54,8 +56,8 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="me.capcom.smsgateway.ACTION_SENT" />
-                <action android:name="me.capcom.smsgateway.ACTION_DELIVERED" />
+                <action android:name="us.kobay.smsgateway.ACTION_SENT" />
+                <action android:name="us.kobay.smsgateway.ACTION_DELIVERED" />
             </intent-filter>
         </receiver>
         <receiver

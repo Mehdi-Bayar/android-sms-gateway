@@ -1,0 +1,31 @@
+package us.kobay.smsgateway.data.entities
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import us.kobay.smsgateway.domain.EntitySource
+import us.kobay.smsgateway.domain.ProcessingState
+import java.util.Date
+
+@Entity(indices = [androidx.room.Index(value = ["createdAt"]), androidx.room.Index(value = ["processedAt"])])
+data class Message(
+    @PrimaryKey val id: String,
+    val text: String,
+    @ColumnInfo(defaultValue = "1")
+    val withDeliveryReport: Boolean,
+    val simNumber: Int?,
+    val validUntil: Date?,
+    @ColumnInfo(defaultValue = "0")
+    val isEncrypted: Boolean,
+    @ColumnInfo(defaultValue = "0")
+    val skipPhoneValidation: Boolean,
+
+    @ColumnInfo(defaultValue = "Local")
+    val source: EntitySource,
+
+    val state: ProcessingState = ProcessingState.Pending,
+    @ColumnInfo(defaultValue = "0")
+    val createdAt: Long = System.currentTimeMillis(),
+    val processedAt: Long? = null,
+) {
+}

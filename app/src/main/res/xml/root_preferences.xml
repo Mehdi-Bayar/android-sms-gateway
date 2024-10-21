@@ -23,7 +23,7 @@
 
     <PreferenceCategory app:title="@string/messages_header">
         <Preference
-            app:fragment="me.capcom.smsgateway.ui.settings.MessagesSettingsFragment"
+            app:fragment="us.kobay.smsgateway.ui.settings.MessagesSettingsFragment"
             app:title="@string/more_settings"
             app:summary="@string/delays_limits_etc"/>
     </PreferenceCategory>
@@ -52,7 +52,7 @@
 
     <PreferenceCategory app:title="@string/logs">
         <Preference
-            app:fragment="me.capcom.smsgateway.ui.LogsListFragment"
+            app:fragment="us.kobay.smsgateway.ui.LogsListFragment"
             app:summary="@string/list_of_last_50_log_entries"
             app:title="@string/view" />
         <EditTextPreference
